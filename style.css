@@ -289,24 +289,25 @@ body{
 .peony .petal:nth-child(6) { transform: rotate(315deg); }
 
 
-.box:hover .cat{
+.box.active .cat {
     transform: translateY(-85px); 
-    z-index: 1; 
+    z-index: 1;
 }
 
-.box:hover .bouquet{
+.box.active .bouquet {
     opacity: 1;
     transform: translateY(0);
 }
 
-.box:hover .hands{
+.box.active .hands {
     opacity: 1;
 }
 
-.box:hover .speech-bubble {
+.box.active .speech-bubble {
     opacity: 1;
     transform: scale(1);
 }
+
 
 .shadow{
     background-color: #000;
@@ -319,7 +320,6 @@ body{
     opacity: 0.2;
     z-index: -1;
 }
-
 
 /* ▬▬▬.◙.▬▬▬
 ═▂▄▄▓▄▄▂
