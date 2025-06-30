@@ -251,42 +251,80 @@ body{
     transform: translateY(20px);
 }
 
-.peony {
-    width: 60px;
-    height: 60px;
+.tulip {
     position: absolute;
+    width: 24px;
+    height: 50px;
+    z-index: 3; /* in front of the cat */
 }
 
-.peony:nth-child(1) {
-    top: 10px;
-    left: 30px;
-    transform: scale(0.9);
+.tulip::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 11px;
+    width: 2px;
+    height: 35px;
+    background-color: green;
+    z-index: -1; /* stem behind flower head */
 }
-.peony:nth-child(2) {
+
+.tulip .petal {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background-color: currentColor;
+    border-radius: 50% 50% 0 0;
+    z-index: 2;
+}
+
+.tulip .petal::before,
+.tulip .petal::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: currentColor;
+    border-radius: 50% 50% 0 0;
+    top: 0;
+    z-index: 1;
+}
+
+.tulip .petal::before {
+    left: -12px;
+    transform: rotate(-25deg);
+}
+
+.tulip .petal::after {
+    left: 12px;
+    transform: rotate(25deg);
+}
+
+/* Tulip positions and unique colors */
+.tulip:nth-child(1) {
+    top: 12px;
+    left: 32px;
+    transform: scale(0.95);
+    color: #ffc0cb; /* soft pink */
+}
+
+.tulip:nth-child(2) {
     top: 35px;
-    left: 5px;
+    left: 10px;
     transform: scale(1);
-}
-.peony:nth-child(3) {
-    top: 35px;
-    left: 55px;
-    transform: scale(0.8);
+    color: #add8e6; /* soft blue */
 }
 
-.peony .petal {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(to top, #F875AA, #FFD0D0);
-    border-radius: 50% 0;
-    transform-origin: bottom right;
+.tulip:nth-child(3) {
+    top: 32px;
+    left: 58px;
+    transform: scale(0.95);
+    color: rgb(233, 230, 230);
 }
-.peony .petal:nth-child(1) { transform: rotate(15deg); }
-.peony .petal:nth-child(2) { transform: rotate(75deg); }
-.peony .petal:nth-child(3) { transform: rotate(135deg); }
-.peony .petal:nth-child(4) { transform: rotate(195deg); }
-.peony .petal:nth-child(5) { transform: rotate(255deg); }
-.peony .petal:nth-child(6) { transform: rotate(315deg); }
+
+
 
 
 .box.active .cat {
