@@ -20,17 +20,17 @@ body{
 .box{
     height: 120px;
     width: 200px;
-    background-color: #FFB200;
+    background-color: #882a2a;
     position: relative;
     top: 300px;
     left: 150px;
-    background-image: radial-gradient(#C21010 5px, transparent 5px);
+    background-image: radial-gradient(#ffffff 5px, transparent 5px);
     background-size: 35px 35px;
     background-position: -5px -12px;
 }
 
 .b1,.b2{
-    background-color: #FFB200;
+    background-color: #ffffff;
     height: 8px;
     width: 50px;
     position: relative;
@@ -60,14 +60,14 @@ body{
 .face{
     height: 140px;
     width: 120px;
-    background-color: white;
+    background-color: #FFA500; /* Changed to orange */
     border-radius: 50%;
 }
 
 .lower{
     height: 40px;
     width: 140px;
-    background-color: white;
+    background-color: white; /* Kept as white for the muzzle */
     border-radius: 0 0 140px 140px;
     position: relative;
     top: 60px;
@@ -77,7 +77,7 @@ body{
 .left-ear, .right-ear{
     height: 0;
     width: 0;
-    border-bottom: 35px solid white;
+    border-bottom: 35px solid #FFA500; /* Changed to orange */
     position: relative;
     border-left: 18px solid transparent;
     border-right: 18px solid transparent;
@@ -138,13 +138,14 @@ body{
 .hat{
     height: 0;
     width: 0;
-    border-bottom: 100px solid #FF1E00;
+    border-bottom: 100px solid #92281a;
     border-left: 35px solid transparent;
     border-right: 35px solid transparent;
     position: relative;
     bottom: 220px;
     left: 50px;
     transform: rotate(15deg);
+    z-index: 3; /* Raised z-index to appear over headphones */
 }
 
 .deco{
@@ -213,7 +214,7 @@ body{
     height: 30px;
     width: 140px;
     position: relative;
-    bottom: 110px; 
+    bottom: 110px;
     left: -12px;
     z-index: 2;
     opacity: 0;
@@ -223,7 +224,7 @@ body{
 .hand-left,.hand-right{
     height: 35px;
     width: 35px;
-    background-color: white;
+    background-color: #FFA500; /* Changed to orange */
     border-radius: 50% 50% 40% 40%;
     position: absolute;
     top: 20px;
@@ -243,7 +244,7 @@ body{
     position: relative;
     width: 120px;
     height: 80px;
-    bottom: 195px; 
+    bottom: 195px;
     left: -2px;
     opacity: 0;
     z-index: 1;
@@ -324,11 +325,52 @@ body{
     color: rgb(233, 230, 230);
 }
 
+/* --- Start of Headphone Fixes --- */
+.headphones {
+    position: absolute;
+    /* Adjusted position to fit on head */
+    top: 7px; /* lifted up by 10px */
+    left: -8px;
+    z-index: 2; /* Positioned between face and hat */
+}
 
+.headphone-left, .headphone-right {
+    /* Adjusted size */
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    position: absolute;
+    /* Adjusted vertical position */
+    top: 8px;
+}
+
+.headphone-left {
+    left: 0;
+}
+
+.headphone-right {
+    /* Corrected position */
+    left: 100px;
+}
+
+.headband {
+    /* Adjusted width and border to look better */
+    width: 105px;
+    height: 12px;
+    border: 4px solid white;
+    border-bottom: none;
+    border-radius: 50px 50px 0 0;
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+/* --- End of Headphone Fixes --- */
 
 
 .box.active .cat {
-    transform: translateY(-85px); 
+    transform: translateY(-85px);
     z-index: 1;
 }
 
@@ -369,7 +411,7 @@ body{
 ╬═╬
 ╬═╬    made by guga
 ╬═╬    *inspired by virtual wiz*
-╬═╬   
+╬═╬
 ╬═╬☻/
 ╬═╬/▌
 ╬═╬/  \
